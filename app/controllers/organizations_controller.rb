@@ -29,7 +29,8 @@ class OrganizationsController < ApplicationController
 
   def update
     @organization = Organization.find(params[:id])
-
+    # FIXME: One solution to a rails 2.3.6 problem with association changes not saving is to uncomment this debug statement
+    # logger.debug @organization.phones.inspect
     if @organization.update_attributes(params[:organization])
       redirect_to(@organization, :notice => 'Organization was successfully updated.')
     else
