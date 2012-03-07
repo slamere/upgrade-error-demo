@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+
+two:
+  name: MyString
+
+org_with_phone:
+  id: 55
+  name: Organization with a phone
+
+# org2_with_phone:
+#   name: Organization with a phone

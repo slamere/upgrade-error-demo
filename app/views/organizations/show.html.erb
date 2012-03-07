@@ -1,0 +1,15 @@
+<p>
+  <b>Name:</b>
+  <%=h @organization.name %>
+</p>
+
+<p id="phones">
+  <b>Phones:</b><br/>
+  <% for phone in @organization.phones %>
+      <%= phone.number %><br/>
+  <% end %>
+  <br/>
+</div>
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

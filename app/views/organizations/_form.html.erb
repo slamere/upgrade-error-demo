@@ -1,0 +1,25 @@
+<p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</p>
+
+<fieldset>
+  <legend>Phones</legend>
+  <div id="phones">
+    <% f.fields_for :phones do |phone_form| %>
+      <div class="phone">
+        <p>
+          <%= phone_form.label :number, 'Phone: ' %>
+          <%= phone_form.text_field :number %>
+          <!-- Uses JS to hide this 'phone' and set a hidden_field with the name
+            `_destroy' to "1" which causes the record to be deleted. -->
+          <%= remove_link_unless_new_record(phone_form) %>
+        </p>
+      </div>
+    <% end %>  
+  </div>
+  
+  <p>
+    <%= add_phone_link "Add a phone", f %>
+  </p>
+</fieldset>

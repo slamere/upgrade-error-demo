@@ -1,0 +1,9 @@
+<div class="phone">
+  <% person_form.fields_for :phones, phone, :child_index => "NEW_RECORD" do |phone_form| %>
+    <p>
+      <%= phone_form.label :number, 'Phone: ' %>
+      <%= phone_form.text_field :number %>
+      <%= link_to_function "remove", "$(this).up('.phone').remove()" %>
+    </p>
+  <% end %>
+</div>
